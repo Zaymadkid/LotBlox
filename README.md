@@ -51,6 +51,46 @@ Manage your Two-Factor Authentication directly within the extension. Generate co
 
 ---
 
+## 🖥️ Installation via GitHub Desktop
+
+Follow these steps to clone the repository, make changes, and keep your extension updated using GitHub Desktop:
+
+### Step 1: Install GitHub Desktop
+1. Download and install **GitHub Desktop** from [desktop.github.com](https://desktop.github.com)
+2. Sign in with your GitHub account
+
+### Step 2: Clone the Repository
+1. In GitHub Desktop, click **File** → **Clone Repository**
+2. Select the **URL** tab
+3. Paste: `https://github.com/Zaymadkid/LotBlox_Final_V10`
+4. Choose a folder on your computer (e.g., Desktop or Documents)
+5. Click **Clone**
+
+### Step 3: Edit & Make Changes
+1. Open the cloned folder in your code editor (VSCode, Notepad++, etc.)
+2. Make your edits to any `.js`, `.html`, or other files
+3. Save your changes
+
+### Step 4: Commit Changes to Git
+1. Go back to GitHub Desktop
+2. You'll see your changes listed under **Changes**
+3. Write a short description in **Summary** (e.g., "Fixed popup button styling")
+4. Click **Commit to main**
+
+### Step 5: Push to GitHub
+1. Click **Push origin** (top right button)
+2. Your changes are now on GitHub!
+
+### Step 6: Load the Updated Extension in Chrome
+1. Open Chrome and go to `chrome://extensions/`
+2. Enable **Developer mode** (toggle in top right)
+3. Click **Load unpacked**
+4. Select the cloned folder
+5. The extension will load and any saved changes will be reflected
+
+**Note:** If you update files and want Chrome to reload them, click the refresh icon on the extension in `chrome://extensions/`
+
+
 ## 🛠️ Developer & Auto-Updates
 This repository is set up with **GitHub Actions**. Every time the code is updated, a new release is automatically bundled and made available for download. 
 
