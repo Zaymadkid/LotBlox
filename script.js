@@ -11,7 +11,7 @@ let CURRENT_USER_NAME = "";
 
 document.addEventListener('DOMContentLoaded', async () => {
     initTabs();
-    await autoFixProfile(); // <-- FIX: Renames "Discord Import" to real user
+    await autoFixProfile(); // Auto-fix profile names
     loadAccounts();
     initAuthLoop();
     loadDashboard();
@@ -25,7 +25,6 @@ async function autoFixProfile() {
         if (!uRes.ok) return;
         const user = await uRes.json();
         
-        // Check current browser cookie against saved list
         const browserCookie = await chrome.cookies.get({url: "https://www.roblox.com", name: ".ROBLOSECURITY"});
         if (!browserCookie) return;
 
@@ -34,9 +33,7 @@ async function autoFixProfile() {
         let dirty = false;
 
         accounts.forEach(acc => {
-            // Match by Cookie Value
             if (acc.cookie === browserCookie.value) {
-                // If it has a placeholder name, fix it
                 if (acc.name === "Discord Import" || acc.name === "User" || acc.name === "Imported User") {
                     console.log(`Fixing profile name: ${user.name}`);
                     acc.name = user.name;
@@ -46,14 +43,10 @@ async function autoFixProfile() {
         });
 
         if (dirty) {
-            // Get avatar for the now-known user
             const tRes = await fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${user.id}&size=150x150&format=Png&isCircular=true`);
             const t = await tRes.json();
-            
-            // Update storage
             const idx = accounts.findIndex(a => a.name === user.name);
             if (idx !== -1 && t.data) accounts[idx].avatar = t.data[0].imageUrl;
-            
             await chrome.storage.local.set({ lotblox_accs: accounts });
         }
     } catch (e) {
@@ -117,7 +110,6 @@ async function loadAccounts() {
 
         el.onclick = (e) => {
             if (e.target.className === 'btn-delete') return;
-            
             if (!isPassOnly) {
                 chrome.cookies.set({ url: "https://www.roblox.com", name: ".ROBLOSECURITY", value: acc.cookie, domain: ".roblox.com" }, () => {
                     acc.valid = true; 
