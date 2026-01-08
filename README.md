@@ -1,6 +1,18 @@
 # 🎮 LotBlox Manager - Vault Edition (V21: Mobile Suite)
 
-**LotBlox Manager** is a premium browser extension for advanced Roblox account management. V21 introduces the **Mobile Suite** - a powerful mobile userscript with draggable UI controls, enhanced Discord bridge integration, and seamless account automation tools.
+**LotBlox Manager** is a premium browser extension for advanced Roblox account management. V21 introduces the **Mobile Suite** - a powerful mobile userscript with draggable UI controls, enhanced Discord bridge 
+
+## 📥 Downloads
+
+### Chrome Extension
+[**Download Chrome Extension**](https://github.com/Zaymadkid/LotBlox/releases/latest/download/LotBlox-V21.zip)
+
+### Mobile UserScript
+[**Download Mobile UserScript**](https://github.com/Zaymadkid/LotBlox/raw/main/lotblox_mobile.user.js)
+
+### Discord Bot
+[**Add LotBlox Bridge Bot to Your Server**](https://discord.com/oauth2/authorize?client_id=1458782837435138194&permissions=0&integration_type=0&scope=bot)
+integration, and seamless account automation tools.
 ---
 
 ## ✨ Key Features
@@ -73,51 +85,6 @@ Manage your entire account vault through a secure Discord bridge.
 3. Click "Raw" to view the raw file
 4. Your userscript manager should prompt you to install
 5. The script will auto-update from this GitHub repo
-
-### Discord Bridge Server
-
-#### Local Hosting (Development)
-
-1. Install Node.js
-2. Navigate to `LotBlox_Bridge` folder
-3. Run `npm install`
-4. Edit `server.js` and add your Discord bot token
-5. Run `npm start`
-6. Server will run on `http://localhost:3000`
-
-#### Free Cloud Hosting (Production)
-
-**Recommended: Render.com**
-
-1. Push the `LotBlox_Bridge` folder to a GitHub repository
-2. Go to [Render.com](https://render.com) and sign up
-3. Create a new "Web Service"
-4. Connect your GitHub repository
-5. Set root directory to `LotBlox_Bridge`
-6. Add environment variable: `BOT_TOKEN` = your Discord bot token
-7. Deploy and copy the production URL
-8. Update `background.js` in the extension: replace `http://localhost:3000` with your Render URL
-
-**Alternative Free Hosts:**
-- **Glitch.com** - Easy paste-and-go, but sleeps after 5 min inactivity
-- **Replit.com** - Good for coding in browser, but "Always On" is now paid
-
----
-
-## 🤖 Discord Bot Setup
-
-1. Go to [Discord Developer Portal](https://discord.com/developers/applications)
-2. Click "New Application" and name it "LotBlox Bridge"
-3. Go to "Bot" tab and click "Add Bot"
-4. Enable "Message Content Intent" under Privileged Gateway Intents
-5. Click "Reset Token" and copy your bot token
-6. Go to "OAuth2" > "URL Generator"
-7. Select scopes: `bot`
-8. Select permissions: `Send Messages`, `Read Messages/View Channels`
-9. Copy the generated URL and open it to invite the bot to your server
-10. Paste the bot token into `server.js` or add it as an environment variable on Render
-
----
 
 ## 🎯 Usage
 
