@@ -1,5 +1,6 @@
 // ==UserScript==
-// @name         LotBlox V20 - Mobile Suite
+// @name         LotBlox V21 - Mobile Suite
+// @version        21.0
 // @namespace    http://tampermonkey.net/
 // @updateURL    https://raw.githubusercontent.com/Zaymadkid/LotBlox/main/lotblox_mobile.user.js
 // @downloadURL  https://raw.githubusercontent.com/Zaymadkid/LotBlox/main/lotblox_mobile.user.js
