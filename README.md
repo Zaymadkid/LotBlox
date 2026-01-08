@@ -1,109 +1,201 @@
-# 🚀 LotBlox Manager - Vault Edition (V12)
+# 🚀 LotBlox Manager – Vault Edition (V15: Smart Unlinker)
 
-**LotBlox Manager** is a premium browser extension designed for advanced Roblox account management. It features a secure Discord-linked vault, automated profile fixing, and built-in 2FA support.
+**LotBlox Manager** is a premium browser extension for advanced Roblox account management. V15 introduces the **Smart Email Unlinker**, enhanced Discord bridge integration, and powerful account automation tools.
 
 ---
 
 ## ✨ Key Features
 
 ### 🛡️ Discord Vault Integration
-Seamlessly import and manage your accounts through a secure bridge. Your accounts are stored safely and can be accessed with a single click.
-- **Cookie Import:** Send cookies from Discord directly to the extension
-- **User:Pass Storage:** Save username and password combinations securely
-- **Auto-Sync:** Automatically receives data from the Discord bridge
 
-### 🔄 Profile Auto-Fixer (New in V12!)
-No more generic "Discord Import" names! The extension now intelligently detects your Roblox profile details (Username & Avatar) the moment you switch to an account, automatically updating your dashboard for a personalized experience.
+Manage your entire account vault through a secure Discord bridge.
+
+- **Cookie Import:** Directly import cookies from Discord bridge
+- **Username:Password Storage:** Save login credentials with optional password-only profiles
+- **Auto-Sync:** Real-time sync from the local bridge at `http://localhost:3000`
+
+### 🔄 Smart Profile Auto-Fixer (New in V15)
+
+- **Auto-Rename Imports:** Detects active Roblox user and auto-renames generic imports (e.g., "Discord Import") to real usernames
+- **Live Avatars:** Pulls live avatar headshots for a cleaner accounts grid
+- **Profile Status:** Displays Robux balance or "Pass Only" status for quick account identification
 
 ### 🔐 Built-in TOTP / 2FA
-Manage your Two-Factor Authentication directly within the extension. Generate codes instantly for your saved accounts without needing external apps.
-- **Auto-Fill:** Automatically fills 2FA codes on Roblox login pages
-- **Per-Account Keys:** Store different 2FA secrets for each account
 
-### ⚡ Quick Actions
-- **One-Click Login:** Switch between multiple accounts instantly.
-- **Security Dashboard:** View your Robux balance and account status at a glance.
-- **Email Swapper:** Change or remove email addresses from accounts.
-- **Password Management:** Update your account passwords directly.
-- **Passkey Support:** Quick access to Roblox passkey settings for modern security.
+- **Per-Account Secrets:** Store 2FA secrets inside the vault for each account
+- **Live Code Display:** Real-time code generation with 30-second timer bar
+- **Auto-Fill & Auto-Submit:** Automatically fills and submits verification codes on Roblox 2FA prompts
+- **Secret Management:** Add, update, or remove secrets per-account
 
----
+### ⚠️ Smart Email Unlinker (V15)
 
-## 📦 Installation Guide
+**The flagship feature of V15 - intelligent email unlinking with safety checks.**
 
-1. **Download the Extension:**
-   - Go to the [Releases](https://github.com/Zaymadkid/LotBlox_Final_V10/releases) page.
-   - Download the latest `LotBlox_Extension.zip`.
-2. **Extract the Files:**
-   - Unzip the downloaded file into a folder on your computer.
-3. **Load into Chrome:**
-   - Open Chrome and navigate to `chrome://extensions/`.
-   - Enable **Developer mode** (top right toggle).
-   - Click **Load unpacked** and select your extracted folder.
-4. **Ready to Go!**
-   - Click the extension icon to start managing your accounts.
+- **ID-Verified Detection:** Checks if account is ID-verified/voice-verified before attempting changes
+- **Age Glitch (Target: <13):** Attempts to change birthdate to 2016 to force email unlink on standard accounts
+- **Parent PIN Bypass:** Automatically tests common PINs when parent controls are detected
+- **Error Handling:** Clear feedback on why unlinking fails (2FA, ID Verified, wrong password, etc.)
+
+### ⚡ Quick Actions & Quality of Life
+
+- **One-Click Login:** Instantly switch `.ROBLOSECURITY` between stored accounts
+- **Bridge Status Indicator:** Real-time connected/disconnected status (🟢/🔴)
+- **Passkey Shortcut:** Quick access to Roblox security settings for passkey registration
+- **Email Auto-Fill Helper:** Speeds up email change flows with auto-populated forms
+- **Bulk Account Management:** View, delete, or switch between accounts in a clean grid interface
 
 ---
 
-## 🔗 Quick Download
+## 📦 Installation
 
-**[⬇️ Download Latest Version](https://github.com/Zaymadkid/LotBlox_Final_V10/releases/latest/download/LotBlox_Extension.zip)**
+### Option 1: Download Latest Release
 
----
+**[⬇️ Download LotBlox V15 (Latest)](https://github.com/Zaymadkid/LotBlox/releases/latest/download/LotBlox_Extension.zip)**
 
-## 🖥️ Installation via GitHub Desktop
+1. Download the ZIP file above
+2. Extract to a folder on your computer
+3. Open `chrome://extensions`
+4. Enable **Developer mode** (top right)
+5. Click **Load unpacked**
+6. Select the extracted folder
+7. Done! LotBlox is installed
 
-Follow these steps to clone the repository, make changes, and keep your extension updated using GitHub Desktop:
+### Option 2: Clone via GitHub Desktop
 
-### Step 1: Install GitHub Desktop
-1. Download and install **GitHub Desktop** from [desktop.github.com](https://desktop.github.com)
-2. Sign in with your GitHub account
-
-### Step 2: Clone the Repository
-1. In GitHub Desktop, click **File** → **Clone Repository**
+1. In GitHub Desktop, click **File → Clone Repository**
 2. Select the **URL** tab
-3. Paste: `https://github.com/Zaymadkid/LotBlox_Final_V10`
-4. Choose a folder on your computer (e.g., Desktop or Documents)
+3. Paste: `https://github.com/Zaymadkid/LotBlox`
+4. Choose a folder on your computer
 5. Click **Clone**
+6. Follow steps 3-7 above
 
-### Step 3: Edit & Make Changes
-1. Open the cloned folder in your code editor (VSCode, Notepad++, etc.)
-2. Make your edits to any `.js`, `.html`, or other files
-3. Save your changes
+### Option 3: Manual Git Clone
 
-### Step 4: Commit Changes to Git
-1. Go back to GitHub Desktop
-2. You'll see your changes listed under **Changes**
-3. Write a short description in **Summary** (e.g., "Fixed popup button styling")
-4. Click **Commit to main**
+```bash
+git clone https://github.com/Zaymadkid/LotBlox
+cd LotBlox
+```
 
-### Step 5: Push to GitHub
-1. Click **Push origin** (top right button)
-2. Your changes are now on GitHub!
-
-### Step 6: Load the Updated Extension in Chrome
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable **Developer mode** (toggle in top right)
-3. Click **Load unpacked**
-4. Select the cloned folder
-5. The extension will load and any saved changes will be reflected
-
-**Note:** If you update files and want Chrome to reload them, click the refresh icon on the extension in `chrome://extensions/`
-
-
-## 🛠️ Developer & Auto-Updates
-This repository is set up with **GitHub Actions**. Every time the code is updated, a new release is automatically bundled and made available for download. 
-
-To update your extension, simply download the latest release and click **Reload** in your Chrome extensions dashboard.
+Then load the folder in `chrome://extensions` with Developer mode enabled.
 
 ---
 
-## ⚖️ License
+## 🎮 How to Use
 
-**Copyright (c) 2026 Zaymadkid. All Rights Reserved.**
+### Dashboard Tab
+- View current logged-in username, Robux balance, and email status
+- See Discord bridge connection status
+- Add passkey for enhanced security
 
-This software is proprietary and protected under copyright law. Unauthorized copying, modification, distribution, or use of this software is strictly prohibited. See the [LICENSE](LICENSE) file for full terms.
+### Accounts Tab
+- **Add Account:** Paste `.ROBLOSECURITY` cookie + optional 2FA secret
+- **Click Profile:** Switch account instantly (cookie-based) or copy password (password-only)
+- **Hover & Delete:** Remove accounts from vault
+- **Password-Only Mode:** Save credentials without cookies for read-only access
+
+### 2FA Tab
+- View live TOTP codes for the current logged-in account
+- Add or update 2FA secrets
+- Codes auto-generate every 30 seconds
+- Automatically fills on Roblox login pages
+
+### Settings Tab
+
+#### Smart Email Unlinker
+1. Enter your account password
+2. Click **ATTEMPT UNLINK**
+3. Extension checks if account is ID-Verified
+4. If eligible, changes age to <13 to trigger auto-unlink
+5. If parent PIN detected, tries common PINs automatically
+6. Reload page to see results
+
+#### Email Auto-Fill Helper
+1. Enter new email and password
+2. Click **Open Settings & Type**
+3. Extension opens email settings page and auto-fills fields
+4. Complete the captcha manually
+5. Submit to change email
 
 ---
 
-*Disclaimer: This extension is for educational and personal management purposes. Always ensure you are following Roblox's Terms of Service.*
+## 🔧 Files Overview
+
+| File | Purpose |
+|------|----------|
+| `manifest.json` | Chrome extension configuration (V3) |
+| `popup.html` | Extension UI (Dashboard, Accounts, 2FA, Settings tabs) |
+| `script.js` | Popup logic & account management |
+| `background.js` | Service worker for CSRF caching, unlinker, email auto-fill, Discord bridge |
+| `content.js` | Auto-fills 2FA codes on Roblox login pages |
+| `sha.js` | SHA-1 & TOTP implementation |
+
+---
+
+## ⚙️ Technical Details
+
+### Chrome MV3 Compliant
+- Uses Service Worker (not background page)
+- No DOM manipulation from service worker
+- Content scripts isolated per-tab
+
+### Security
+- **Local Storage Only:** All data stored in `chrome.storage.local` (encrypted at rest by Chrome)
+- **CSRF Protection:** Caches X-CSRF-TOKEN from Roblox headers
+- **No External API:** Bridge communication is local (`http://localhost:3000`)
+
+### Smart Unlinker Logic
+1. Validates password with POST to `https://users.roblox.com/v1/birthdate`
+2. Checks voice verification status via `https://voice.roblox.com/v1/settings`
+3. Attempts age change to 2016 (sets user to <13)
+4. If Parent PIN detected (error code 6), tries: "0000", "1234", "1111", "12345"
+5. Reports success/failure via Chrome notification
+
+---
+
+## 📋 Changelog - V15
+
+### ✨ New Features
+- **Smart Email Unlinker:** Intelligent age glitch with Parent PIN detection
+- **Profile Auto-Fixer:** Auto-renames imported accounts and syncs avatars
+- **Enhanced Error Messages:** Clear feedback on why operations fail
+
+### 🐛 Improvements
+- Better bridge status detection
+- Improved account switching speed
+- Cleaner UI animations
+- More reliable 2FA auto-fill
+
+### 🔒 Fixes
+- Fixed CSRF token caching issues
+- Fixed 2FA secret validation
+- Fixed account profile image loading
+
+---
+
+## 🛑 Limitations & Warnings
+
+⚠️ **ID-Verified Accounts:** Cannot unlink email if account is verified with government ID or voice verification.
+
+⚠️ **2FA Protected:** If 2FA is enabled, you'll need the original email code to change the age.
+
+⚠️ **Parent Controls:** Parent PINs are brute-forced with common values; unique PINs may not be bypassed.
+
+⚠️ **Terms of Service:** Using this extension may violate Roblox Terms of Service. Use at your own risk.
+
+---
+
+## 🔗 Links
+
+- **GitHub:** https://github.com/Zaymadkid/LotBlox
+- **Latest Release:** https://github.com/Zaymadkid/LotBlox/releases/latest
+- **Discord Bridge:** See `SYNC_WORKFLOW_GUIDE.md` for setup
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+**Made with ❤️ for the Roblox community. Use responsibly.**
