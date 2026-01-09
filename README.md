@@ -1,159 +1,132 @@
-# 🎮 LotBlox Manager - Vault Edition (V21: Mobile Suite)
+# 🎮 LotBlox Manager V21 - Vault Edition & Mobile Suite
 
-**LotBlox Manager** is a premium browser extension for advanced Roblox account management. V21 introduces the **Mobile Suite** - a powerful mobile userscript with draggable UI controls, enhanced Discord bridge 
+**LotBlox Manager** is a premium browser extension and mobile suite for advanced Roblox account management with Discord integration, secure vault storage, and powerful automation tools.
 
-## 📥 Downloads
-
-### Chrome Extension
-[**Download Chrome Extension**](https://github.com/Zaymadkid/LotBlox/releases/latest/download/LotBlox-V21.zip)
-
-### Mobile UserScript
-[**Download Mobile UserScript**](https://github.com/Zaymadkid/LotBlox/raw/main/lotblox_mobile.user.js)
-
-### Discord Bot
-[**Add LotBlox Bridge Bot to Your Server**](https://discord.com/oauth2/authorize?client_id=1458782837435138194&permissions=0&integration_type=0&scope=bot)
-integration, and seamless account automation tools.
 ---
 
 ## ✨ Key Features
 
-### 🔵 Discord Vault Integration
+### 🔐 Secure Vault
+- **AES-256 Encrypted Storage** for Roblox cookies and passwords
+- Multi-account management with avatar thumbnails
+- One-click account switching
+- Password-only profiles for secure credential storage
 
-Manage your entire account vault through a secure Discord bridge.
+### 📉 Age Glitch
+- Forcefully set account age to <13 (born 2016)
+- Automatically unlinks email addresses
+- Bypasses parent PIN protection (common PINs)
+- ID verification detection
 
-- **Cookie Import:** Directly import cookies from Discord bridge
-- **Username:Password Storage:** Save login credentials with optional password-only profiles
-- **Auto-Sync:** Real-time sync from the local bridge at `http://localhost:3000`
+### 🤖 Discord Bridge
+- Send accounts directly from Discord using `!cookie` command
+- Real-time sync between Discord and Extension
+- Queue system for multiple account imports
+- Username:Password login support with `!login`
 
-### 🔧 Smart Profile Auto-Fixer (New in V15)
+### 📱 Mobile Suite
+- Tampermonkey userscript for iOS/Android
+- Draggable UI controls
+- Full vault access on mobile browsers
+- Cross-platform synchronization
 
-- **Auto-Rename Imports:** Detects active Roblox user and auto-renames generic imports (e.g., "Discord Import") to real usernames
-- **Live Avatars:** Pulls live avatar headshots for a cleaner accounts grid
-- **Profile Status:** Displays Robux balance or "Pass Only" status for quick account identification
-
-### 🔑 Built-in TOTP / 2FA
-
-- **Per-Account Secrets:** Store 2FA secrets inside the vault for each account
-- **Live Code Display:** Real-time code generation with 30-second timer bar
-- **Auto-Fill & Auto-Submit:** Automatically fills and submits verification codes on Roblox 2FA prompts
-- **Secret Management:** Add, update, or remove secrets per-account
-
-### 📧 Email Auto-Fill (New in V20)
-
-- **Auto-Type Email:** Opens Roblox settings and automatically types new email address
-- **Password Auto-Fill:** Fills password field for verification
-- **Captcha Support:** Alerts user to complete captcha after auto-fill
-
-### 📉 Age Manager Glitch (New in V20)
-
-- **Force Age Change:** Sets account birthday to Jan 1, 2016 (9 years old)
-- **Email Unlinker:** Forcefully unlinks email by changing age to <13
-- **Safety Checks:** Detects ID-verified accounts and blocks age change
-- **PIN Bruteforce:** Attempts common PINs if parent PIN is detected
-- **Warning System:** Confirms action with user before executing
-
-### 🛡️ Security Features
-
-- **Real Passkey Support:** One-click button to add passkeys (opens Roblox security page)
-- **Password Changer:** Update account password directly from extension
-- **Cookie Switcher:** Instantly switch between accounts with one click
-
-### 🌉 Discord Bridge Server
-
-- **Bot Commands:**
-  - `!cookie <cookie>` - Queue cookie for import
-  - `!login user:pass` - Queue username:password for import
-- **Auto-Sync:** Extension polls bridge every 3 seconds for new accounts
-- **Status Indicator:** Shows bridge connection status (🟢 Connected / 🔴 Disconnected)
+### 🔑 2FA Authenticator
+- Built-in TOTP code generator
+- Auto-refresh every 30 seconds
+- Secret key management per account
+- No external app required
 
 ---
 
-## 📦 Installation
+## 📥 Downloads
 
-### Chrome Extension
-
-1. Download or clone this repository
-2. Open Chrome and go to `chrome://extensions/`
-3. Enable "Developer mode" (top right)
-4. Click "Load unpacked" and select the repository folder
-5. The extension icon should appear in your toolbar
+### Chrome/Edge Extension
+[**Download Latest Release**](https://github.com/Zaymadkid/LotBlox/releases/latest)
 
 ### Mobile UserScript
+[**Download Mobile Suite**](https://github.com/Zaymadkid/LotBlox/raw/main/lotblox_mobile.user.js)
 
-1. Install a userscript manager (Tampermonkey, Violentmonkey, etc.)
-2. Click on `lotblox_mobile.user.js` in this repo
-3. Click "Raw" to view the raw file
-4. Your userscript manager should prompt you to install
-5. The script will auto-update from this GitHub repo
-
-## 🎯 Usage
-
-### Dashboard Tab
-- View current user info (username, Robux, email status)
-- Add passkey with one click
-- Check Discord bridge connection status
-
-### Accounts Tab
-- View all saved accounts in a grid
-- Click account to switch cookies instantly
-- Click "×" to delete an account
-- Add new accounts with cookie or 2FA secret
-
-### 2FA Tab
-- View live TOTP code for current user
-- 30-second countdown timer
-- Add/update 2FA secret key
-
-### Settings Tab
-- **Email Auto-Fill:** Enter new email and password, extension opens settings and types for you
-- **Age Manager:** Change age to 9 (2016) to force email unlink
-- **Password Changer:** Update account password
-
-### Mobile UserScript
-- Floating button (bottom right) opens control panel
-- **Cookie Login:** Paste cookie and login instantly
-- **Email Unlinker:** Force age change to <13 to remove email
-- **Email Changer:** Add or update email address
-
-### Discord Commands
-- `!cookie _|WARNING:-DO-NOT-SHARE...` - Import account by cookie
-- `!login username:password` - Import account by credentials
+### Discord Bot
+[**Add LotBlox Bridge Bot**](https://discord.com/oauth2/authorize?client_id=1458782837435138194&permissions=0&integration_type=0&scope=bot)
 
 ---
 
-## ⚠️ Warnings
+## 🔗 Important Links
 
-- **Age Manager:** Changing age to <13 enables Safe Chat and may restrict account features
-- **ID Verified Accounts:** Cannot change age if account is ID verified
-- **2FA Required:** Email unlinker may fail if 2FA is enabled and you don't have access to old email
-- **Parent PIN:** Age manager will attempt to bruteforce common PINs (0000, 1234, 1111, 12345)
-- **Cookies:** Never share your .ROBLOSECURITY cookie with anyone
-- **Bot Token:** Keep your Discord bot token private
+**Replit Host:** https://ac60268c-ed75-426d-88d7-fe1af5f2bb6e-00-jmsrouekor0a.kirk.replit.dev
 
----
+**Discord Server:** *Coming Soon*
 
-## 🔄 Auto-Update (UserScript)
-
-The mobile userscript includes auto-update URLs:
-- `@updateURL https://raw.githubusercontent.com/Zaymadkid/LotBlox/main/lotblox_mobile.user.js`
-- `@downloadURL https://raw.githubusercontent.com/Zaymadkid/LotBlox/main/lotblox_mobile.user.js`
-
-Your userscript manager will automatically check for updates.
+**GitHub Repository:** https://github.com/Zaymadkid/LotBlox
 
 ---
 
-## 📝 License
+## 🚀 Quick Start
 
-See [LICENSE](LICENSE) file for details.
+### Extension Setup
+1. Download the latest release
+2. Extract the ZIP file
+3. Open `chrome://extensions` (or `edge://extensions`)
+4. Enable "Developer mode"
+5. Click "Load unpacked" and select the extracted folder
+6. The extension icon will appear in your toolbar
+
+### Discord Bridge Setup
+1. Add the bot to your Discord server
+2. Ensure the Replit server is running (green status)
+3. Use `!cookie <your_cookie>` to import accounts
+4. Check the extension - accounts appear automatically
+
+### Mobile Setup
+1. Install Tampermonkey on your mobile browser
+2. Click the Mobile UserScript download link
+3. Tap "Install" when prompted
+4. Visit any Roblox page to see the floating controls
 
 ---
 
-## 🆘 Support
+## 📖 Usage Guide
 
-For issues, questions, or feature requests, please open an issue on GitHub.
+### Account Management
+- **Add Account:** Click the extension icon  "Add Account"  Paste cookie
+- **Switch Account:** Click any account card in the vault
+- **Delete Account:** Click the × button on any account card
+- **Update 2FA:** Go to Authenticator tab  "Update Key"
+
+### Age Glitch
+1. Go to Settings tab
+2. Enter your current password
+3. Click "Execute Age Glitch"
+4. Wait for confirmation (email will be unlinked)
+
+### Email Management
+1. Go to Settings tab
+2. Enter new email and password
+3. Click "Auto-Fill Email Form"
+4. Complete the captcha on the opened page
 
 ---
 
-**Version 20.0** - Mobile Suite Edition  
-**Author:** Zaymadkid  
-**Repository:** [github.com/Zaymadkid/LotBlox](https://github.com/Zaymadkid/LotBlox)
+## ⚠️ Disclaimer
+
+This tool is for educational purposes only. Use at your own risk. The developers are not responsible for any account actions, bans, or data loss. Always follow Roblox Terms of Service.
+
+---
+
+## 📜 License
+
+MIT License - See [LICENSE](LICENSE) file for details
+
+---
+
+## 🛠️ Technical Details
+
+- **Manifest Version:** 3
+- **Encryption:** AES-256-GCM
+- **Bridge Protocol:** REST API with polling
+- **Supported Browsers:** Chrome, Edge, Brave, Opera
+- **Mobile Support:** iOS Safari, Android Chrome (via Tampermonkey)
+
+---
+
+**Made with ❤️ by the LotBlox Team**
